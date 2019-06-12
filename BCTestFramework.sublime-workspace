@@ -1,0 +1,641 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Test",
+				"TestCase2〔module〕"
+			],
+			[
+				"py",
+				"pyplot〔module〕"
+			],
+			[
+				"test1",
+				"test1withhand2〔module〕"
+			],
+			[
+				"Base",
+				"BasePage〔module〕"
+			],
+			[
+				"uni",
+				"unittest〔module〕"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"f",
+				"find_element_by_id"
+			],
+			[
+				"sele",
+				"selenium〔module〕"
+			],
+			[
+				"video",
+				"videoidlist"
+			],
+			[
+				"scr",
+				"screen"
+			],
+			[
+				"ce",
+				"centery"
+			],
+			[
+				"scree",
+				"screen_rect"
+			],
+			[
+				"s",
+				"screen"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "testsuites/TestRunner.py",
+			"settings":
+			{
+				"buffer_size": 995,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "2019-06-12 17:05:51,263 - DayangHomePage - INFO - Had search ' IP播出 ' in inputBox\n.2019-06-12 17:05:58,807 - DayangHomePage - INFO - Had search ' 4K ' in inputBox\n<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> \nTime Elapsed: 0:00:14.370810\n.\n***Repl Closed***\n",
+			"settings":
+			{
+				"buffer_size": 275,
+				"line_ending": "Windows",
+				"name": "*REPL* [python]",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "2019-06-12 17:04:07,511 - DayangHomePage - INFO - Had search ' IP播出 ' in inputBox\nF2019-06-12 17:04:44,479 - DayangHomePage - INFO - Had search ' 4K ' in inputBox\n<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> \nTime Elapsed: 0:00:43.202740\n.\n***Repl Closed***\n",
+			"settings":
+			{
+				"buffer_size": 275,
+				"line_ending": "Windows",
+				"name": "*REPL* [python]",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "# -*- coding: utf-8 -*-\n#把测试样例写成框架形式\nfrom selenium import webdriver\nfrom BCTestFramework.POM.dayanghomepage import DayangHomePage\nimport unittest, time\n\nclass TestCase1(unittest.TestCase):\n    @classmethod\n    def setUp(cls):\n        cls.driver = webdriver.Edge()\n        cls.driver.implicitly_wait(30)\n        cls.driver.get('http://www.dayang.com.cn')\n\n    @classmethod\n    def tearDown(cls):\n        cls.driver.quit()   \n\n\n    def test_dayangsearch_test_case(self): \n        dypage = DayangHomePage(self.driver)\n        dypage.type_search('IP播出')\n        handles = self.driver.window_handles\n        for handle in handles:\n            if handle != self.driver.current_window_handle:\n                self.driver.close()\n                self.driver.switch_to.window(handle)\n        results = self.driver.find_elements_by_class_name(\"itb-detail\")\n        self.assertEqual(8, len(results))\n        dypage.take_screenshot()\n        \n        \n\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+			"file": "testsuites/testcase1.py",
+			"file_size": 1052,
+			"file_write_time": 132048030496537419,
+			"settings":
+			{
+				"buffer_size": 990,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "testsuites/testcase2.py",
+			"settings":
+			{
+				"buffer_size": 988,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 152.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Channel"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 810.0
+	},
+	"console":
+	{
+		"height": 262.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/python36/BCTestFramework",
+		"/C/python36/BCTestFramework/engine",
+		"/C/python36/BCTestFramework/logs",
+		"/C/python36/BCTestFramework/POM",
+		"/C/python36/BCTestFramework/Screenshots",
+		"/C/python36/BCTestFramework/test_report",
+		"/C/python36/BCTestFramework/testsuites"
+	],
+	"file_history":
+	[
+		"/C/python36/BCTestFramework/testsuites/testcase2.py",
+		"/C/python36/BCTestFramework/testsuites/testcase1.py",
+		"/C/python36/BCTestFramework/POM/dayanghomepage.py",
+		"/C/python36/mypy/selenium/test/testsuitfordayangHTML.py",
+		"/C/python36/BCTestFramework/testsuites/TestRunner.py",
+		"/C/python36/BCTestFramework/testsuits/testcase1.py",
+		"/C/python36/BCTestFramework/testsuits/TestRunner.py",
+		"/C/python36/BCTestFramework/testsuits/testcase2.py",
+		"/C/python36/mypy/selenium/test/HTMLTestRunnerMine.py",
+		"/C/python36/mypy/selenium/test/unittestfordayang1.py",
+		"/C/python36/mypy/selenium/test/unittestfordayang2.py",
+		"/C/python36/BCTestFramework/engine/logger.py",
+		"/C/python36/mypy/selenium/test/logger.py",
+		"/C/JSTest/1.html",
+		"/C/python36/BCTestFramework/testsuits/test1withhand4.py",
+		"/C/Python36/BCTestFramework/ClassTest1.py",
+		"/C/python36/mypy/ascii/ascii.py",
+		"/C/JSTest/1.js",
+		"/C/python36/mypy/selenium/test/test.py",
+		"/C/Python36/mypy/selenium/test/teaching2.py",
+		"/C/Python36/mypy/selenium/test/teaching3.py",
+		"/C/Python36/mypy/selenium/test/test1withhand.py",
+		"/C/Python36/mypy/selenium/test/test1withhand2.py",
+		"/C/Python36/mypy/selenium/test/test1withhand3.py",
+		"/C/郭歌/自动化测试/框架代码/automation_test_framework/pageobjects/baidu_homepage.py",
+		"/C/郭歌/自动化测试/框架代码/automation_test_framework/framework/base_page.py",
+		"/C/Program Files (x86)/Jenkins/users/users.xml",
+		"/C/Program Files (x86)/Jenkins/jenkins.xml",
+		"/C/Python36/mypy/selenium/test/teaching.py",
+		"/C/郭歌/自动化测试/框架代码/automation_test_framework/testsuites/test_baidu_search.py",
+		"/C/python36/mypy/selenium/test/test1withhand3.py",
+		"/C/python36/mypy/selenium/test/test1withhand4.py",
+		"/C/Python36/mypy/selenium/test/testsuitfordayangHTML.py",
+		"/C/Python36/mypy/selenium/test/unittestfordayang2.py",
+		"/C/Python36/mypy/selenium/test/testsuitfordayang.py",
+		"/C/python36/mypy/selenium/test/teaching.py",
+		"/C/python36/mypy/selenium/test/teaching2.py",
+		"/C/python36/mypy/selenium/test/teaching3.py",
+		"/C/python36/mypy/selenium/test/testbaidu.py",
+		"/C/郭歌/自动化测试/框架代码/automation_test_framework/testsuites/TestRunner.py",
+		"/C/python36/BCTestFramework/ClassTest1.py",
+		"/C/python36/BCTestFramework/ClassTest2.py",
+		"/C/Python36/mypy/selenium/test/HTMLTestRunnerMine.py",
+		"/C/python36/BCTestFramework/test1.py",
+		"/C/python36/test.py",
+		"/C/郭歌/自动化测试/作业1/登录测试.py",
+		"/C/郭歌/自动化测试/作业1/切换成功测试.py",
+		"/C/郭歌/自动化测试/作业1/切换失败测试.py",
+		"/C/python36/BCTestFramework/test2.py",
+		"/C/Python36/mypy/selenium/test1withhand.py",
+		"/C/郭歌/自动化测试/js/a.html",
+		"/C/Python36/mypy/selenium/unittestfordayang2.py",
+		"/C/Python36/mypy/selenium/kalalon.py",
+		"/C/python36/mypy/csdn.py",
+		"/C/Python36/mypy/csdn.py",
+		"/C/Python36/mypy/selenium/unittestfordayang1.py",
+		"/C/python36/selenium/firetest.py",
+		"/C/Python36/mypy/selenium/firetest.py",
+		"/C/python36/mypy/selenium/temp.py",
+		"/C/python36/AB/test.py",
+		"/C/python36/mypy/pyauto/test1.py",
+		"/C/python36/mypy/selenium/finalvideo.py",
+		"/C/python36/mypy/selenium/videodown/direction.py",
+		"/C/python36/mypy/selenium/videodown/finalvideo.py",
+		"/C/python36/mypy/selenium/test1.py",
+		"/C/python36/mypy/pyauto/test2.py",
+		"/C/python36/mypy/selenium/videodown.py",
+		"/C/python36/mypy/selenium/video.json",
+		"/C/python36/mypy/selenium/testsuitfordayangHTML.py",
+		"/C/python36/mypy/selenium/unittestfordayang2.py",
+		"/C/python36/mypy/selenium/unittestfordayang1.py",
+		"/C/python36/mypy/selenium/testsuitfordayang.py",
+		"/C/python36/mypy/selenium/kalalon.py",
+		"/C/python36/mypy/selenium/HTMLTestRunner.py",
+		"/C/python36/mypy/selenium/SmokeTestReport.html",
+		"/C/python36/mypy/selenium/unittest.py",
+		"/C/python36/mypy/《Python编程》源代码文件/chapter_17/python_repos.py",
+		"/C/python36/mypy/wave/source.py",
+		"/C/python36/mypy/《Python编程》源代码文件/chapter_12/alien_invasion.py",
+		"/C/python36/mypy/《Python编程》源代码文件/chapter_12/game_functions.py",
+		"/C/python36/mypy/《Python编程》源代码文件/chapter_12/bullet.py",
+		"/C/python36/Scripts/f2py.py",
+		"/C/Users/xin/.ssh/id_rsa.pub",
+		"/C/Users/xin/.gitconfig",
+		"/C/python36/mypy/shot/settings",
+		"/C/Users/xin/PycharmProjects/gg/venv/searchproducts.py",
+		"/C/Users/xin/PycharmProjects/gg/venv/idletest.py",
+		"/C/Users/xin/PycharmProjects/gg/venv/game.py",
+		"/C/python36/mypy/drawtest.py",
+		"/C/python36/mypy/test.py",
+		"/C/Users/xin/Downloads/云直播开发计划.mpp"
+	],
+	"find":
+	{
+		"height": 41.3333333333
+	},
+	"find_in_files":
+	{
+		"height": 390.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"jpg"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "testsuites/TestRunner.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								280,
+								280
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"spell_check": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								275
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_indent": false,
+							"detect_indentation": false,
+							"gutter": false,
+							"history_arrows": true,
+							"indent_subsequent_lines": false,
+							"line_numbers": false,
+							"repl": true,
+							"repl_external_id": "python",
+							"repl_id": "4eff3981c43b4b10855bc82d16b977f7",
+							"repl_restart_args":
+							{
+								"cmd":
+								[
+									"python",
+									"-u",
+									"$file_basename"
+								],
+								"cwd": "$file_path",
+								"encoding": "utf8",
+								"extend_env":
+								{
+									"PYTHONIOENCODING": "utf-8"
+								},
+								"external_id": "python",
+								"syntax": "Packages/Python/Python.tmLanguage",
+								"type": "subprocess"
+							},
+							"repl_sublime2": false,
+							"smart_indent": false,
+							"spell_check": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"file": "Screenshots/20190612170559.png",
+					"semi_transient": true,
+					"stack_index": 1,
+					"type": "image"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								275
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_indent": false,
+							"detect_indentation": false,
+							"gutter": false,
+							"history_arrows": true,
+							"indent_subsequent_lines": false,
+							"line_numbers": false,
+							"repl": true,
+							"repl_external_id": "python",
+							"repl_id": "c3bf212ebca742b58310fa0e514f818f",
+							"repl_restart_args":
+							{
+								"cmd":
+								[
+									"python",
+									"-u",
+									"$file_basename"
+								],
+								"cwd": "$file_path",
+								"encoding": "utf8",
+								"extend_env":
+								{
+									"PYTHONIOENCODING": "utf-8"
+								},
+								"external_id": "python",
+								"syntax": "Packages/Python/Python.tmLanguage",
+								"type": "subprocess"
+							},
+							"repl_sublime2": false,
+							"smart_indent": false,
+							"spell_check": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "testsuites/testcase1.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 990,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								921,
+								921
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "testsuites/testcase2.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 988,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								939,
+								939
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 134.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 192.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "BCTestFramework.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"3",
+				"C:\\python36\\mypy\\test.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 236.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
