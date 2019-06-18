@@ -3,8 +3,8 @@ from BCTestFramework.engine import HTMLTestRunnerMine
 import os
 import unittest
 import time
-from BCTestFramework.testsuites.testcase1 import TestCase1 
-from BCTestFramework.testsuites.testcase2 import TestCase2
+# from BCTestFramework.testsuites.testcase1 import TestCase1 
+# from BCTestFramework.testsuites.testcase2 import TestCase2
 from BCTestFramework import testsuites as testsuites
 
 
@@ -20,11 +20,12 @@ HtmlFile = report_path + now + "HTMLReport.html"
 fp = open(HtmlFile, "wb")
 
 # 构建suite
-# suite = unittest.TestLoader().discover("testsuites")
+testdir = 'C:\\python36\\BCTestFramework\\testsuites'
+suite = unittest.TestLoader().discover(testdir,pattern='testcase*.py')
 
-search_tests = unittest.TestLoader().loadTestsFromTestCase(TestCase1)
-in_tests = unittest.TestLoader().loadTestsFromTestCase(TestCase2)
-suite = unittest.TestSuite([search_tests,in_tests])
+# search_tests = unittest.TestLoader().loadTestsFromTestCase(TestCase1)
+# in_tests = unittest.TestLoader().loadTestsFromTestCase(TestCase2)
+# suite = unittest.TestSuite([search_tests,in_tests])
 
  
 if __name__ =='__main__':

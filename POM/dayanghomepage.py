@@ -16,13 +16,10 @@ class DayangHomePage(object):
 
     def type_search(self,text):
         self.btn.click()
-        self.searchbox.clear()
-        
+        self.searchbox.clear()       
         self.searchbox.send_keys(text)
         self.searchbox.send_keys(Keys.ENTER)  
         logger.info("Had search \' %s \' in inputBox" % text)
-
-        
 
     def take_screenshot(self):
         file_path = os.path.dirname(os.getcwd()) + '\\Screenshots\\'
@@ -33,6 +30,13 @@ class DayangHomePage(object):
             self.driver.get_screenshot_as_file(screen_name)
         except Exception as e:
         	print('error')
+
+    def switch_window(self):
+        handles = self.driver.window_handles
+        for handle in handles:
+            if handle != self.driver.current_window_handle:
+                self.driver.close()
+                self.driver.switch_to.window(handle)
      
 
 # file_path = os.path.dirname(os.getcwd()) + '\\Screenshots\\'

@@ -63,13 +63,22 @@
 			"file": "testsuites/TestRunner.py",
 			"settings":
 			{
-				"buffer_size": 995,
+				"buffer_size": 1075,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "2019-06-12 17:05:51,263 - DayangHomePage - INFO - Had search ' IP播出 ' in inputBox\n.2019-06-12 17:05:58,807 - DayangHomePage - INFO - Had search ' 4K ' in inputBox\n<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> \nTime Elapsed: 0:00:14.370810\n.\n***Repl Closed***\n",
+			"file": "test_report/2019-06-17-14_57_47HTMLReport.html",
+			"settings":
+			{
+				"buffer_size": 6263,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "2019-06-17 14:57:50,702 - DayangHomePage - INFO - Had search ' IP播出 ' in inputBox\n.2019-06-17 14:57:58,374 - DayangHomePage - INFO - Had search ' 4K ' in inputBox\n<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> \nTime Elapsed: 0:00:14.955078\n.\n***Repl Closed***\n",
 			"settings":
 			{
 				"buffer_size": 275,
@@ -80,33 +89,10 @@
 			}
 		},
 		{
-			"contents": "2019-06-12 17:04:07,511 - DayangHomePage - INFO - Had search ' IP播出 ' in inputBox\nF2019-06-12 17:04:44,479 - DayangHomePage - INFO - Had search ' 4K ' in inputBox\n<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> \nTime Elapsed: 0:00:43.202740\n.\n***Repl Closed***\n",
-			"settings":
-			{
-				"buffer_size": 275,
-				"line_ending": "Windows",
-				"name": "*REPL* [python]",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"contents": "# -*- coding: utf-8 -*-\n#把测试样例写成框架形式\nfrom selenium import webdriver\nfrom BCTestFramework.POM.dayanghomepage import DayangHomePage\nimport unittest, time\n\nclass TestCase1(unittest.TestCase):\n    @classmethod\n    def setUp(cls):\n        cls.driver = webdriver.Edge()\n        cls.driver.implicitly_wait(30)\n        cls.driver.get('http://www.dayang.com.cn')\n\n    @classmethod\n    def tearDown(cls):\n        cls.driver.quit()   \n\n\n    def test_dayangsearch_test_case(self): \n        dypage = DayangHomePage(self.driver)\n        dypage.type_search('IP播出')\n        handles = self.driver.window_handles\n        for handle in handles:\n            if handle != self.driver.current_window_handle:\n                self.driver.close()\n                self.driver.switch_to.window(handle)\n        results = self.driver.find_elements_by_class_name(\"itb-detail\")\n        self.assertEqual(8, len(results))\n        dypage.take_screenshot()\n        \n        \n\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
 			"file": "testsuites/testcase1.py",
-			"file_size": 1052,
-			"file_write_time": 132048030496537419,
 			"settings":
 			{
-				"buffer_size": 990,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "testsuites/testcase2.py",
-			"settings":
-			{
-				"buffer_size": 988,
+				"buffer_size": 783,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -191,18 +177,18 @@
 	"expanded_folders":
 	[
 		"/C/python36/BCTestFramework",
-		"/C/python36/BCTestFramework/engine",
 		"/C/python36/BCTestFramework/logs",
-		"/C/python36/BCTestFramework/POM",
 		"/C/python36/BCTestFramework/Screenshots",
 		"/C/python36/BCTestFramework/test_report",
 		"/C/python36/BCTestFramework/testsuites"
 	],
 	"file_history":
 	[
-		"/C/python36/BCTestFramework/testsuites/testcase2.py",
-		"/C/python36/BCTestFramework/testsuites/testcase1.py",
 		"/C/python36/BCTestFramework/POM/dayanghomepage.py",
+		"/C/python36/BCTestFramework/testsuites/testcase1.py",
+		"/C/python36/BCTestFramework/testsuites/testcase2.py",
+		"/C/python36/BCTestFramework/testsuites/__init__.py",
+		"/C/python36/BCTestFramework/__pycache__/ClassTest1.cpython-36.pyc",
 		"/C/python36/mypy/selenium/test/testsuitfordayangHTML.py",
 		"/C/python36/BCTestFramework/testsuites/TestRunner.py",
 		"/C/python36/BCTestFramework/testsuits/testcase1.py",
@@ -294,7 +280,7 @@
 	],
 	"find":
 	{
-		"height": 41.3333333333
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -326,7 +312,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -335,15 +321,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 995,
+						"buffer_size": 1075,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								280,
-								280
+								604,
+								604
 							]
 						],
 						"settings":
@@ -356,73 +342,38 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"semi_transient": false,
+					"file": "test_report/2019-06-17-14_57_47HTMLReport.html",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 275,
+						"buffer_size": 6263,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								275,
-								275
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"auto_indent": false,
-							"detect_indentation": false,
-							"gutter": false,
-							"history_arrows": true,
-							"indent_subsequent_lines": false,
-							"line_numbers": false,
-							"repl": true,
-							"repl_external_id": "python",
-							"repl_id": "4eff3981c43b4b10855bc82d16b977f7",
-							"repl_restart_args":
-							{
-								"cmd":
-								[
-									"python",
-									"-u",
-									"$file_basename"
-								],
-								"cwd": "$file_path",
-								"encoding": "utf8",
-								"extend_env":
-								{
-									"PYTHONIOENCODING": "utf-8"
-								},
-								"external_id": "python",
-								"syntax": "Packages/Python/Python.tmLanguage",
-								"type": "subprocess"
-							},
-							"repl_sublime2": false,
-							"smart_indent": false,
-							"spell_check": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
-				},
-				{
-					"file": "Screenshots/20190612170559.png",
-					"semi_transient": true,
-					"stack_index": 1,
-					"type": "image"
 				},
 				{
 					"buffer": 2,
@@ -451,7 +402,7 @@
 							"line_numbers": false,
 							"repl": true,
 							"repl_external_id": "python",
-							"repl_id": "c3bf212ebca742b58310fa0e514f818f",
+							"repl_id": "e572b4319c2145b8b5aed42e357e9694",
 							"repl_restart_args":
 							{
 								"cmd":
@@ -489,15 +440,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 990,
+						"buffer_size": 783,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								921,
-								921
+								783,
+								783
 							]
 						],
 						"settings":
@@ -511,38 +462,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "testsuites/testcase2.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 988,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								939,
-								939
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

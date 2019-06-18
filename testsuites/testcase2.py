@@ -19,18 +19,10 @@ class TestCase2(unittest.TestCase):
     def test_dayangsearch_test_case(self): 
         dypage = DayangHomePage(self.driver)
         dypage.type_search('4K')
-        handles = self.driver.window_handles
-        for handle in handles:
-            if handle != self.driver.current_window_handle:
-                self.driver.close()
-                self.driver.switch_to.window(handle)
+        dypage.switch_window()
         results = self.driver.find_elements_by_class_name("itb-detail")
         self.assertEqual(8, len(results))
         dypage.take_screenshot()
         
-        
-
-
-
 if __name__ == "__main__":
     unittest.main()
