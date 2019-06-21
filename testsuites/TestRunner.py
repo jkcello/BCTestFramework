@@ -20,7 +20,7 @@ HtmlFile = report_path + now + "HTMLReport.html"
 fp = open(HtmlFile, "wb")
 
 # 构建suite
-testdir = 'C:\\python36\\BCTestFramework\\testsuites'
+testdir = os.path.dirname(os.path.abspath('.')) + '/testsuites/'
 suite = unittest.TestLoader().discover(testdir,pattern='testcase*.py')
 
 # search_tests = unittest.TestLoader().loadTestsFromTestCase(TestCase1)
